@@ -7,41 +7,72 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-      {/* HEADER ELEGANTE */}
+      {/* Cabeçalho com Logo e Navegação estilizada */}
       <header className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* LOGO */}
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-orange-500 rounded-full flex items-center justify-center shadow-sm">
-                <span className="text-white text-sm font-bold">M</span>
-              </div>
-              <div>
-                <span className="text-xl font-bold text-gray-900 tracking-wide">METLICZ</span>
-                <span className="block text-[10px] text-gray-400 tracking-[0.2em] font-light uppercase">Imóveis</span>
-              </div>
+          <div className="flex flex-wrap items-center justify-between py-4">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold text-gray-900 tracking-wide">METLICZ</span>
+              <span className="text-xs text-gray-400 tracking-[0.2em] font-light uppercase">Imóveis</span>
             </div>
 
-            {/* MENU */}
-            <nav className="hidden md:flex items-center gap-1">
-              {['home', 'atendimento', 'empreendimentos', 'upload', 'login'].map((modulo) => (
-                <button
-                  key={modulo}
-                  onClick={() => setModuloAtual(modulo)}
-                  className={`px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-200 ${
-                    moduloAtual === modulo
-                      ? 'bg-gray-900 text-white shadow-sm'
-                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
-                  }`}
-                >
-                  {modulo === 'home' && 'Início'}
-                  {modulo === 'atendimento' && '💬 IA'}
-                  {modulo === 'empreendimentos' && '🏠 Imóveis'}
-                  {modulo === 'upload' && '📸 Upload'}
-                  {modulo === 'login' && '🔐 Login'}
-                </button>
-              ))}
-              <a href="/admin" className="ml-2 px-5 py-2.5 text-sm font-medium text-white bg-orange-500 rounded-full hover:bg-orange-600 transition-all duration-200 shadow-sm hover:shadow">
+            {/* Navegação principal - estilo visual que você pediu */}
+            <nav className="flex flex-wrap items-center gap-1 mt-2 sm:mt-0">
+              <button
+                onClick={() => setModuloAtual('home')}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                  moduloAtual === 'home'
+                    ? 'bg-gray-900 text-white shadow-sm'
+                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                Início
+              </button>
+              <button
+                onClick={() => setModuloAtual('atendimento')}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                  moduloAtual === 'atendimento'
+                    ? 'bg-gray-900 text-white shadow-sm'
+                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                Atendimento IA
+              </button>
+              <button
+                onClick={() => setModuloAtual('empreendimentos')}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                  moduloAtual === 'empreendimentos'
+                    ? 'bg-gray-900 text-white shadow-sm'
+                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                Empreendimentos
+              </button>
+              <button
+                onClick={() => setModuloAtual('upload')}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                  moduloAtual === 'upload'
+                    ? 'bg-gray-900 text-white shadow-sm'
+                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                Upload
+              </button>
+              <button
+                onClick={() => setModuloAtual('login')}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                  moduloAtual === 'login'
+                    ? 'bg-gray-900 text-white shadow-sm'
+                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                Login
+              </button>
+              <a
+                href="/admin"
+                className="ml-2 px-4 py-2 text-sm font-medium text-white bg-orange-500 rounded-full hover:bg-orange-600 transition-all duration-200 shadow-sm hover:shadow"
+              >
                 Admin
               </a>
             </nav>
@@ -49,7 +80,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* CONTEÚDO */}
+      {/* Conteúdo Principal - Estrutura limpa e centralizada */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {moduloAtual === 'home' && <ModuloHome />}
         {moduloAtual === 'atendimento' && <ModuloAtendimento />}
@@ -62,64 +93,45 @@ export default function Home() {
 }
 
 // ============================================
-// HOME
+// Módulo Home - Visual limpo com cards de funcionalidades
 // ============================================
 
 function ModuloHome() {
   return (
-    <div className="max-w-5xl mx-auto space-y-16">
-      {/* HERO */}
-      <div className="text-center space-y-6 py-8">
-        <div className="inline-flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full text-sm text-gray-500">
-          <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-          Sistema Online
-        </div>
+    <div className="max-w-5xl mx-auto space-y-12">
+      {/* Hero Section */}
+      <div className="text-center space-y-4">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
-          Bem-vinda, <span className="font-semibold text-orange-500">Cláudia</span>
+          Bem-vinda, <span className="font-semibold text-orange-500">Cláudia</span>!
         </h1>
-        <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
-          Seu sistema de gestão imobiliária com inteligência artificial para 
-          <span className="text-gray-700 font-medium"> Caraguatatuba</span> e 
-          <span className="text-gray-700 font-medium"> Litoral Norte</span>.
+        <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-light">
+          Seu sistema de gestão imobiliária com IA está pronto.
         </p>
-        <div className="flex flex-wrap justify-center gap-4 pt-4">
-          <button className="px-8 py-3 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-all shadow-sm hover:shadow">
-            Explorar Imóveis
-          </button>
-          <button className="px-8 py-3 border border-gray-200 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-50 transition-all">
-            Ver Demonstração
-          </button>
-        </div>
       </div>
 
-      {/* CARDS */}
+      {/* Cards das Funcionalidades - Organização clara */}
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { icon: '💬', title: 'Atendimento IA', description: 'Respostas personalizadas com inteligência artificial para cada cliente.', color: 'orange' },
-          { icon: '🏠', title: 'Empreendimentos', description: 'Gestão completa de imóveis com acabamento de alto padrão.', color: 'blue' },
-          { icon: '📸', title: 'Upload de Arquivos', description: 'Envio simples de fotos, documentos e vídeos dos imóveis.', color: 'purple' }
+          { 
+            icon: '💬', 
+            title: 'Atendimento IA', 
+            description: 'Respostas personalizadas com inteligência artificial para cada cliente.' 
+          },
+          { 
+            icon: '🏠', 
+            title: 'Empreendimentos', 
+            description: 'Gestão completa de imóveis com acabamento de alto padrão.' 
+          },
+          { 
+            icon: '📸', 
+            title: 'Upload', 
+            description: 'Envio simples de fotos, documentos e vídeos dos imóveis.' 
+          }
         ].map((item, index) => (
           <div key={index} className="group p-8 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300">
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 bg-${item.color}-50`}>
-              {item.icon}
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+            <div className="text-4xl mb-4">{item.icon}</div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
             <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* ESTATÍSTICAS */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-gray-100">
-        {[
-          { value: '12', label: 'Imóveis Ativos', color: 'text-orange-500' },
-          { value: '5', label: 'Leads Hoje', color: 'text-blue-500' },
-          { value: '3', label: 'Visitas Agendadas', color: 'text-green-500' },
-          { value: 'R$ 2.5M', label: 'Em Vendas', color: 'text-purple-500' }
-        ].map((stat, index) => (
-          <div key={index} className="text-center p-4">
-            <div className={`text-3xl font-semibold ${stat.color}`}>{stat.value}</div>
-            <div className="text-sm text-gray-400 font-light">{stat.label}</div>
           </div>
         ))}
       </div>
@@ -128,7 +140,7 @@ function ModuloHome() {
 }
 
 // ============================================
-// ATENDIMENTO
+// Módulo Atendimento IA
 // ============================================
 
 function ModuloAtendimento() {
@@ -159,68 +171,37 @@ function ModuloAtendimento() {
 
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-xl">
-          💬
-        </div>
-        <div>
-          <h2 className="text-2xl font-light text-gray-900">Atendimento IA</h2>
-          <p className="text-sm text-gray-400 font-light">Respostas personalizadas com inteligência artificial</p>
-        </div>
-      </div>
-
-      <div className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-2">Mensagem do Lead</label>
-          <textarea
-            rows={4}
-            className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all text-gray-900"
-            placeholder="Cole aqui a mensagem do cliente..."
-            value={mensagem}
-            onChange={(e) => setMensagem(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-2">DDD do Cliente</label>
-          <select
-            className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all text-gray-900"
-            value={ddd}
-            onChange={(e) => setDdd(e.target.value)}
-          >
-            <option value="">Selecione...</option>
-            <option value="11">São Paulo (11)</option>
-            <option value="12">Caraguatatuba (12)</option>
-            <option value="13">Santos (13)</option>
-            <option value="19">Campinas (19)</option>
-            <option value="21">Rio de Janeiro (21)</option>
-            <option value="00">Outro</option>
-          </select>
-        </div>
-
+      <h2 className="text-2xl font-light text-gray-900 mb-6">Atendimento IA</h2>
+      <div className="space-y-4">
+        <textarea
+          rows={4}
+          className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all text-gray-900"
+          placeholder="Cole a mensagem do cliente..."
+          value={mensagem}
+          onChange={(e) => setMensagem(e.target.value)}
+        />
+        <select
+          className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all text-gray-900"
+          value={ddd}
+          onChange={(e) => setDdd(e.target.value)}
+        >
+          <option value="">DDD do Cliente</option>
+          <option value="11">São Paulo (11)</option>
+          <option value="12">Caraguatatuba (12)</option>
+          <option value="13">Santos (13)</option>
+          <option value="19">Campinas (19)</option>
+          <option value="21">Rio de Janeiro (21)</option>
+          <option value="00">Outro</option>
+        </select>
         <button
           onClick={handleEnviar}
           disabled={carregando || !mensagem}
           className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-4 px-6 rounded-xl transition-all disabled:opacity-50 shadow-sm hover:shadow"
         >
-          {carregando ? (
-            <span className="flex items-center justify-center gap-2">
-              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              Gerando...
-            </span>
-          ) : (
-            'Gerar Resposta'
-          )}
+          {carregando ? 'Gerando...' : 'Gerar Resposta Personalizada'}
         </button>
-
         {resposta && (
           <div className="mt-6 p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-sm font-medium text-gray-400">✨ Resposta</span>
-            </div>
             <p className="text-gray-800 whitespace-pre-wrap leading-relaxed">{resposta}</p>
             <div className="flex gap-3 mt-4">
               <button
@@ -250,7 +231,7 @@ function ModuloAtendimento() {
 }
 
 // ============================================
-// EMPREENDIMENTOS
+// Módulo Empreendimentos
 // ============================================
 
 function ModuloEmpreendimentos() {
@@ -285,19 +266,10 @@ function ModuloEmpreendimentos() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-xl">
-          🏠
-        </div>
-        <div>
-          <h2 className="text-2xl font-light text-gray-900">Empreendimentos</h2>
-          <p className="text-sm text-gray-400 font-light">Lista de todos os imóveis cadastrados</p>
-        </div>
-      </div>
-
+      <h2 className="text-2xl font-light text-gray-900 mb-8">Empreendimentos</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {lista.map((emp) => (
-          <div key={emp.id} className="group p-6 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200">
+          <div key={emp.id} className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200">
             <div className="flex items-start justify-between mb-3">
               <h3 className="text-lg font-medium text-gray-900">{emp.nome}</h3>
               <span className="text-xs font-medium text-white bg-gray-900 px-3 py-1 rounded-full">
@@ -319,7 +291,7 @@ function ModuloEmpreendimentos() {
 }
 
 // ============================================
-// UPLOAD
+// Módulo Upload
 // ============================================
 
 function ModuloUpload() {
@@ -390,30 +362,17 @@ function ModuloUpload() {
 
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-xl">
-          📸
-        </div>
-        <div>
-          <h2 className="text-2xl font-light text-gray-900">Upload de Arquivos</h2>
-          <p className="text-sm text-gray-400 font-light">Envie fotos, PDFs, TXTs e DOCs</p>
-        </div>
-      </div>
-
-      <div className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-2">Empreendimento</label>
-          <select
-            className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all text-gray-900"
-            value={empreendimentoId}
-            onChange={(e) => setEmpreendimentoId(e.target.value)}
-          >
-            {empreendimentos.map((emp) => (
-              <option key={emp.id} value={emp.id}>{emp.nome}</option>
-            ))}
-          </select>
-        </div>
-
+      <h2 className="text-2xl font-light text-gray-900 mb-6">Upload de Arquivos</h2>
+      <div className="space-y-4">
+        <select
+          className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all text-gray-900"
+          value={empreendimentoId}
+          onChange={(e) => setEmpreendimentoId(e.target.value)}
+        >
+          {empreendimentos.map((emp) => (
+            <option key={emp.id} value={emp.id}>{emp.nome}</option>
+          ))}
+        </select>
         <div className="border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center hover:border-gray-300 transition-all">
           <input
             type="file"
@@ -432,7 +391,6 @@ function ModuloUpload() {
             </div>
           </label>
         </div>
-
         {arquivos.length > 0 && (
           <div>
             <h4 className="font-medium text-gray-700 mb-3">Arquivos ({arquivos.length})</h4>
@@ -464,7 +422,7 @@ function ModuloUpload() {
 }
 
 // ============================================
-// LOGIN
+// Módulo Login
 // ============================================
 
 function ModuloLogin() {
@@ -498,7 +456,6 @@ function ModuloLogin() {
             </button>
           </p>
         </div>
-
         <form className="space-y-4" onSubmit={handleSubmit}>
           {!isLogin && (
             <input
@@ -526,7 +483,6 @@ function ModuloLogin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
           <button
             type="submit"
             className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-4 rounded-xl transition-all shadow-sm hover:shadow"
@@ -534,7 +490,6 @@ function ModuloLogin() {
             {isLogin ? 'Entrar' : 'Registrar'}
           </button>
         </form>
-
         <p className="text-center text-xs text-gray-400 mt-6">
           Ao continuar, você concorda com nossos{' '}
           <a href="#" className="text-gray-600 hover:text-gray-900">Termos de Serviço</a>

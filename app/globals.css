@@ -2,66 +2,429 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-cormorant: 'Cormorant Garamond', serif;
+/* ============================================
+   FONTE CORMORANT GARAMOND - GLOBAL
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* ============================================
+   RESET E ESTILOS BASE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-cormorant);
-  background-color: #f9fafb;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  line-height: 1.6;
 }
 
-/* Estilos específicos para títulos */
+/* ============================================
+   TIPOGRAFIA - HIERARQUIA ELEGANTE
+   ============================================ */
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cormorant);
-  font-weight: 600;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
   letter-spacing: 0.02em;
+  color: #1a1a1a;
 }
 
-/* Estilos para textos */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 p, span, a, li, button, input, textarea, select {
-  font-family: var(--font-cormorant);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #4a4a4a;
 }
 
-/* Estilos para a logo */
+/* ============================================
+   LINKS E BOTÕES
+   ============================================ */
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+/* ============================================
+   CABEÇALHO E LOGO
+   ============================================ */
+
 .logo-text {
-  font-family: var(--font-cormorant);
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
+  font-size: 1.75rem;
   letter-spacing: 0.05em;
-  font-size: 1.5rem;
+  color: #1a1a1a;
 }
 
 .logo-sub {
-  font-family: var(--font-cormorant);
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-style: italic;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
+  color: #9ca3af;
+  text-transform: uppercase;
 }
 
-/* Estilos para o menu */
-.menu-item {
-  font-family: var(--font-cormorant);
-  font-weight: 500;
-  letter-spacing: 0.03em;
+/* ============================================
+   MENU DE NAVEGAÇÃO
+   ============================================ */
+
+.nav-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  color: #6b7280;
 }
 
-/* Estilos para cards de imóveis */
+.nav-item:hover {
+  background-color: #f3f4f6;
+  color: #1a1a1a;
+}
+
+.nav-item-active {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   CARDS E CONTAINERS
+   ============================================ */
+
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+  border-color: #e5e7eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
 .card-title {
-  font-family: var(--font-cormorant);
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
 }
 
-.card-price {
-  font-family: var(--font-cormorant);
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-/* Estilos para o footer */
-.footer-text {
-  font-family: var(--font-cormorant);
+.card-description {
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ============================================
+   INPUTS E FORMULÁRIOS
+   ============================================ */
+
+input, textarea, select {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+.btn-primary {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary:hover {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #1a1a1a;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.btn-accent {
+  background: #f97316;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 1px 3px rgba(249, 115, 22, 0.2);
+}
+
+.btn-accent:hover {
+  background: #ea580c;
+  box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: #1a1a1a;
+}
+
+.hero-title .highlight {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ============================================
+   ESTATÍSTICAS
+   ============================================ */
+
+.stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.stat-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* ============================================
+   RESPOSTA DA IA
+   ============================================ */
+
+.ia-response {
+  background: #1a1a1a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #2d2d2d;
+}
+
+.ia-response p {
+  color: #f3f4f6;
+  font-weight: 300;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+/* ============================================
+   UPLOAD
+   ============================================ */
+
+.upload-zone {
+  border: 2px dashed #e5e7eb;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-zone:hover {
+  border-color: #f97316;
+  background: #fffbeb;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* ============================================
+   UTILITÁRIOS
+   ============================================ */
+
+.text-muted {
+  color: #9ca3af;
+}
+
+.text-soft {
+  color: #6b7280;
+}
+
+.bg-soft {
+  background: #f9fafb;
+}
+
+.border-soft {
+  border-color: #f3f4f6;
+}
+
+.shadow-soft {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-medium {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
