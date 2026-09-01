@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from '@/components/Logo';
+// import Logo from '@/components/Logo';
 
 import { useState, useEffect } from 'react';
 // Importe a fonte, por exemplo, do Google Fonts via @next/font ou link no HTML
@@ -261,7 +261,7 @@ export default function ImovelDetalhes({ imovelId }: { imovelId: string }) {
   );
 <div className="mt-16 pt-6 border-t border-gray-200 text-center">
   <div className="flex justify-center mb-2">
-    <Logo /> {/* 👈 SUBSTITUÍDO */}
+    <div className="flex justify-center mb-2"><div className="flex items-center gap-2"><span className="text-2xl font-bold text-gray-800 tracking-tight">METLICZ</span><span className="text-sm font-light text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">IM�WIES</span></div></div> {/* 👈 SUBSTITUÍDO */}
   </div>
   <p className="text-sm text-gray-400">Imóveis · Litoral Norte & São Paulo</p>
   <p className="text-sm text-gray-400">© {new Date().getFullYear()} Metlicz Imóveis</p>

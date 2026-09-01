@@ -2,21 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import ImovelDetalhes from '@/components/ImovelDetalhes';
-// import Logo from '@/components/Logo';
 
 export default function Home() {
   const [moduloAtual, setModuloAtual] = useState('home');
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
-      {/* CABEÇALHO COM LOGO */}
       <header className="bg-white shadow-md border-b-4 border-orange-500 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-  <span className="text-2xl font-bold text-gray-800 tracking-tight">METLICZ</span>
-  <span className="text-sm font-light text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">IM�WIES</span>
-</div>
+              <span className="text-2xl font-bold text-gray-800 tracking-tight">METLICZ</span>
+              <span className="text-sm font-light text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">IMÓWIEŚ</span>
+            </div>
             <nav className="flex flex-wrap gap-2">
               <button
                 onClick={() => setModuloAtual('home')}
@@ -90,7 +88,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* CONTEÚDO */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {moduloAtual === 'home' && <ModuloHome />}
         {moduloAtual === 'atendimento' && <ModuloAtendimento />}
@@ -446,9 +443,9 @@ function ModuloLogin() {
         <div className="text-center">
           <div className="flex justify-center mb-4">
             <div className="flex items-center gap-2">
-  <span className="text-2xl font-bold text-gray-800 tracking-tight">METLICZ</span>
-  <span className="text-sm font-light text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">IM�WIES</span>
-</div>
+              <span className="text-2xl font-bold text-gray-800 tracking-tight">METLICZ</span>
+              <span className="text-sm font-light text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">IMÓWIEŚ</span>
+            </div>
           </div>
           <h2 className="text-3xl font-extrabold text-gray-900">
             {isLogin ? 'Acesse sua conta' : 'Crie sua conta'}
