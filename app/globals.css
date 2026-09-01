@@ -1,26 +1,67 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-cormorant: 'Cormorant Garamond', serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cormorant);
+  background-color: #f9fafb;
+}
+
+/* Estilos específicos para títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Estilos para textos */
+p, span, a, li, button, input, textarea, select {
+  font-family: var(--font-cormorant);
+}
+
+/* Estilos para a logo */
+.logo-text {
+  font-family: var(--font-cormorant);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+}
+
+.logo-sub {
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+/* Estilos para o menu */
+.menu-item {
+  font-family: var(--font-cormorant);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* Estilos para cards de imóveis */
+.card-title {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.card-price {
+  font-family: var(--font-cormorant);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Estilos para o footer */
+.footer-text {
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.05em;
 }

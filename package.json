@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mistralai/mistralai": "^2.6.4",
+    "@next/font": "^14.2.15",
     "axios": "^1.20.0",
     "dotenv": "^17.4.2",
     "multer": "^2.3.0",
