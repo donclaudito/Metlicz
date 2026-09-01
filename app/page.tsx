@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import ImovelDetalhes from '@/components/ImovelDetalhes';
-
+import ImovelDetalhes from './components/ImovelDetalhes';
 export default function Home() {
   const [moduloAtual, setModuloAtual] = useState('home');
 
