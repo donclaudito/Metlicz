@@ -8,11 +8,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-      {/* CABEÇALHO ORIGINAL */}
       <header className="bg-white shadow-md border-b-4 border-orange-500 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* LOGO ORIGINAL COM FONTE */}
             <div className="flex items-center gap-2">
               <span className="text-2xl font-bold text-gray-800 tracking-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 METLICZ
@@ -21,8 +19,6 @@ export default function Home() {
                 IMÓWIEŚ
               </span>
             </div>
-
-            {/* MENU ORIGINAL */}
             <nav className="flex flex-wrap gap-2">
               <button
                 onClick={() => setModuloAtual('home')}
@@ -103,7 +99,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* CONTEÚDO ORIGINAL */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {moduloAtual === 'home' && <ModuloHome />}
         {moduloAtual === 'atendimento' && <ModuloAtendimento />}
@@ -117,7 +112,7 @@ export default function Home() {
 }
 
 // ============================================
-// MÓDULO HOME (ORIGINAL)
+// MÓDULO HOME
 // ============================================
 
 function ModuloHome() {
@@ -157,7 +152,7 @@ function ModuloHome() {
 }
 
 // ============================================
-// MÓDULO ATENDIMENTO (ORIGINAL)
+// MÓDULO ATENDIMENTO
 // ============================================
 
 function ModuloAtendimento() {
@@ -274,7 +269,7 @@ function ModuloAtendimento() {
 }
 
 // ============================================
-// MÓDULO EMPREENDIMENTOS (ORIGINAL)
+// MÓDULO EMPREENDIMENTOS
 // ============================================
 
 function ModuloEmpreendimentos() {
@@ -338,7 +333,7 @@ function ModuloEmpreendimentos() {
 }
 
 // ============================================
-// MÓDULO UPLOAD (ORIGINAL)
+// MÓDULO UPLOAD
 // ============================================
 
 function ModuloUpload() {
@@ -491,7 +486,7 @@ function ModuloUpload() {
 }
 
 // ============================================
-// MÓDULO LOGIN (ORIGINAL)
+// MÓDULO LOGIN
 // ============================================
 
 function ModuloLogin() {
@@ -589,3 +584,5 @@ function ModuloLogin() {
     </div>
   );
 }
+
+
