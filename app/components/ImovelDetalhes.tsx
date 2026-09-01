@@ -1,5 +1,7 @@
 "use client";
 
+import Logo from '@/components/Logo';
+
 import { useState, useEffect } from 'react';
 // Importe a fonte, por exemplo, do Google Fonts via @next/font ou link no HTML
 // Exemplo: import { Inter } from '@next/font/google';
@@ -257,4 +259,12 @@ export default function ImovelDetalhes({ imovelId }: { imovelId: string }) {
       </div>
     </div>
   );
+<div className="mt-16 pt-6 border-t border-gray-200 text-center">
+  <div className="flex justify-center mb-2">
+    <Logo /> {/* 👈 SUBSTITUÍDO */}
+  </div>
+  <p className="text-sm text-gray-400">Imóveis · Litoral Norte & São Paulo</p>
+  <p className="text-sm text-gray-400">© {new Date().getFullYear()} Metlicz Imóveis</p>
+</div>
+
 }
